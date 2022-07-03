@@ -1,9 +1,23 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+language: "pt-BR"
+url: "https://callmarx.dev" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "" # the name of your site, e.g. ACME Corp.
+title: "CallMarx" # the name of your site, e.g. ACME Corp.
+name: "Eugenio Augusto Jimenes"
 
 plugins:
   - jekyll-postcss
 
 postcss:
   cache: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "categories"
+    values:
+      layout: category
+      permalink: /category/:basename/

@@ -1,0 +1,24 @@
+<footer class="mt-2 py-4 border-double border-t-4">
+  <div class="container mx-auto">
+    <div class="flex mb-2">
+      {% for network in site.data.social-networks %}
+        <a class="py-2 mr-2" href="{{ network.link }}">
+          <img width="24" height="24" src="{{ network.logo }}" alt="{{ network.name }}" />
+        </a>
+      {% endfor %}
+    </div>
+    <div class="text-sm text-gray-600">
+      <span>
+        &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Desenvolvido com o framework
+        <a href="https://jekyllrb.com" rel="noopener noreferrer nofollow" target="_blank">
+          <b>Jekyll</b>
+        </a> e
+        <a href="https://tailwindcss.com" rel="noopener noreferrer nofollow" target="_blank">
+          <b>Tailwind</b>
+        </a>, sob a licença
+        <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopener noreferrer nofollow" target="_blank">
+          <b>GPLv3</b>
+        </a>.
+      </span>
+    </div>
+</footer>
