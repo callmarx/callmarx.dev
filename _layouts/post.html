@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{% include titling.html title=page.title description=page.description date=page.date %}
+
+<div class="flex justify-center w-full">
+  <div class="prose prose-base md:prose-lg lg:prose-2xl"><!-- To Do: break in mobile for less than 768px -->
+    {{ content }}
+  </div>
+</div>

@@ -8,8 +8,17 @@
   </head>
   <body>
     <div class="container mx-auto px-6 md:px-4">
-      {% include header.html title=page.title description=page.description date=page.date %}
+      {% include header.html %}
       {{content}}
+      <!-- dummy listing posts -->
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          </li>
+        {% endfor %}
+      </ul>
+      <!-- To Do: replace for a include html-->
       {% include footer.html %}
     </div>
   </body>
