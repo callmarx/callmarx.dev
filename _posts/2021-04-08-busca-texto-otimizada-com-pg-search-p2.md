@@ -33,8 +33,8 @@ $ make up
 # em outro terminal, também dentro da pasta do projeto
 $ make prepare-db
 ```
-**Obs**: O comando ```make up``` ocupa o terminal em questão pois exibe, em tempo real, o log do Rails. 
-Para sair, basta dar CTRL+C; isso interrompe o ```rails server```, mas o *container* continuará
+**Obs**: O comando `make up` ocupa o terminal em questão pois exibe, em tempo real, o log do Rails. 
+Para sair, basta dar CTRL+C; isso interrompe o `rails server`, mas o *container* continuará
 rodando em segundo plano (*background*).
 {: .notice--info}
 
@@ -49,7 +49,7 @@ Primeiro eu montei um Rails API-Only, ou seja, uma aplicação
 [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer){:target="_blank"} que
 responde apenas em JSON já que o objetivo aqui é testar buscas em textos ~~e não porque eu não
 tenho saco em ficar enfeitando HTML e CSS~~. Com um único model e controller - Article - sob os
-campos ```:title``` e ```:content```, podemos preenchê-los com algum texto e assim utilizar a gema.
+campos `:title` e `:content`, podemos preenchê-los com algum texto e assim utilizar a gema.
 Para popular esses artigos utilizei o RSS do site da
 [câmara dos deputados](https://www.camara.leg.br/noticias/rss){:target="_blank"} como demonstrado
 no script a seguir.
@@ -101,7 +101,7 @@ Para utilizar [PgSearch](https://github.com/Casecommons/pg_search){:target="_bla
 necessário nenhum arquivo de configuração ou inicialização, basta incluir no Gemfile e seguir as
 instruções de inclusão e escopo como a documentação da Gema explica em
 <https://github.com/Casecommons/pg_search#pg_search_scope>{:target="_blank"}. Porém, precisamos
-configurar nosso banco para o ```tsvector``` do PostgreSQL, no caso especificamente para a tabela
+configurar nosso banco para o `tsvector` do PostgreSQL, no caso especificamente para a tabela
 *articles* que contém o texto a ser buscado. Para isso incluí o seguinte *migrate*:
 
 ```ruby
@@ -147,21 +147,21 @@ end
 ```
 
 Traduzindo em passos o *migrate* acima, temos o seguinte:
-- Cria uma nova coluna em *articles*, chamada *tsv* do tipo ```tsvector```
-- Cria uma indexação sob essa nova coluna do tipo ```gin```
-- Cria uma configuração de busca textual copiada da padrão ```pg_catalog.portuguese``` com nome
+- Cria uma nova coluna em *articles*, chamada *tsv* do tipo `tsvector`
+- Cria uma indexação sob essa nova coluna do tipo `gin`
+- Cria uma configuração de busca textual copiada da padrão `pg_catalog.portuguese` com nome
 *custom_pt*
-- Edita essa busca textual para mapear as palavras com a extensão ```unaccent```
-- Cria um *trigger* que será invocado na inserção e edição para atualizar o novo campo ```:tsv```
-com ```tsvector``` dos campos ```:title, :content``` do artigo em questão com a nova configuração
-de busca textual.
-- Atualiza todos os artigos para preencher ```:tsv``` da mesma forma que o *trigger* descrito.
+- Edita essa busca textual para mapear as palavras com a extensão `unaccent`
+- Cria um *trigger* que será invocado na inserção e edição para atualizar o novo campo `:tsv`
+com `tsvector` dos campos `:title, :content` do artigo em questão com a nova configuração de busca
+textual.
+- Atualiza todos os artigos para preencher `:tsv` da mesma forma que o *trigger* descrito.
 
 Note que com isto utilizei uma estratégia dupla de otimização: ***tsvector*** + ***GIN index***.
 {: .notice--warning}
 
-Os métodos de busca estão no model, sendo ```.bad_search``` implementado com o simples ```ilike```
-do SQL e ```.good_search``` com a gema. O código, disponível em ```app/models/article.rb```, é o
+Os métodos de busca estão no model, sendo `.bad_search` implementado com o simples `ilike`
+do SQL e `.good_search` com a gema. O código, disponível em `app/models/article.rb`, é o
 que segue:
 ```ruby
 # Código disponível em app/models/article.rb
@@ -209,9 +209,9 @@ class Article < ApplicationRecord
 end
 ```
 
-Atente aqui que foi incluído ```PgSearch::Model``` e definido o escopo com ```pg_search_scope```
+Atente aqui que foi incluído `PgSearch::Model` e definido o escopo com `pg_search_scope`
 para que possamos dizer a gema quais configurações de busca estamos utilizando e sob quais campos
-do modelo. Defini em ambas os métodos de busca para quando o argumento for nulo retornar ```.all```
+do modelo. Defini em ambas os métodos de busca para quando o argumento for nulo retornar `.all`
 de maneira a simplificar a lógica no controller.
 
 ## Resultados
@@ -224,17 +224,17 @@ Antes de pontuarmos o desempenho, vale lembrar que inflexões de palavras como c
 gênero, plural etc, não deveria interferir na integridade da busca, ou seja, no nosso contexto com
 essa API, na quantidade de artigos selecionados. Se um usuário busca, por exemplo, por *amendoins*,
 é intuitivo incluir também artigos que contenham a inflexão singular *amendoim*. Porém, como será
-mostrado, este não é o comportamento quando utilizamos ```ilike``` da linguagem SQL.
+mostrado, este não é o comportamento quando utilizamos `ilike` da linguagem SQL.
 
-Fazendo uma consulta simples na API (lembrando que é preciso ter um terminal com ```make up```
-rodando), sem o parâmetro de url ```:good_search == 'ok'```, o controller utiliza o método de busca
-```.bad_search``` e fazendo isso para o termo *proibir* resulta em 4 artigos:
+Fazendo uma consulta simples na API (lembrando que é preciso ter um terminal com `make up`
+rodando), sem o parâmetro de url `:good_search == 'ok'`, o controller utiliza o método de busca
+`.bad_search` e fazendo isso para o termo *proibir* resulta em 4 artigos:
 
 ![bad proibir](/assets/images/bad_proibir.webp)
 
 <br/>
 <br/>
-Fazendo agora uma consulta com o parâmetro de url, ou seja, com o método de busca ```.good_search```,
+Fazendo agora uma consulta com o parâmetro de url, ou seja, com o método de busca `.good_search`,
 com o mesmo termo *proibir*, já obtemos 13 artigos:
 
 ![good proibir](/assets/images/good_proibir.webp)
@@ -242,8 +242,8 @@ com o mesmo termo *proibir*, já obtemos 13 artigos:
 <br/>
 <br/>
 Se repetirmos as buscas acima com alguma conjugação do mesmo verbo como *proibido*, a consulta
-```.bad_search``` irá selecionar outros artigos, já com a ```.good_search``` mantemos os mesmos 13
-artigos já que o ```tsvector``` trabalha com
+`.bad_search` irá selecionar outros artigos, já com a `.good_search` mantemos os mesmos 13
+artigos já que o `tsvector` trabalha com
 [lexemas](https://radames.manosso.nom.br/linguagem/gramatica/morfologia/lexema/){:target="_blank"},
 o que garante abranger todas as inflexões do termo buscado. Essas consultas pelo Postman podem ser
 importadas pelo arquivo
@@ -254,9 +254,9 @@ Para avaliar o desempenho implementei algumas tasks para medir o tempo de execu�
 feitas através de uma
 [lista de 485 palavras](https://raw.githubusercontent.com/callmarx/fts_example/main/lib/tasks/present_words.txt){:target="_blank"},
 explicitamente presentes nos artigos, ou seja, cada uma das palavras retorna pelo menos um artigo
-com ```.bad_search```. Dessa forma evitamos consultas vazias com o método ruim, mas presentes com o
+com `.bad_search`. Dessa forma evitamos consultas vazias com o método ruim, mas presentes com o
 método bom, o que afetaria a qualidade do teste. De qualquer forma, como demonstrado anteriormente,
-```.good_search``` tende a retornar mais artigos que o outro método, mesmo assim provou-se mais
+`.good_search` tende a retornar mais artigos que o outro método, mesmo assim provou-se mais
 eficiente como veremos.
 
 Utilizei a gema [Benchmark](https://github.com/ruby/benchmark){:target="_blank"} com o código
@@ -310,7 +310,7 @@ end
 ```
 
 Inclui a execução de ambos os testes (método e requisição JSON) no Makefile do projeto, assim basta
-executar em seu terminal ```make benchmark```. A seguir os resultados que obtive:
+executar em seu terminal `make benchmark`. A seguir os resultados que obtive:
 
 ```bash
 # em um terminal
@@ -334,8 +334,8 @@ good  0.378955   0.143361   0.522316 (  4.883817)
 Este relatório mostra, em segundos, o tempo de CPU do usuário, o tempo de CPU do sistema, a soma
 dos dois anteriores e o tempo real decorrido. Como dependemos do Rails e do PostgreSQL devemos
 considerar a última coluna, o tempo real medido. Para reafirmar isso implementei "na mão" outro
-benchmark com uso de ```Process.clock_gettime(Process::CLOCK_MONOTONIC)``` no lugar de gema
-[Benchmark](https://github.com/ruby/benchmark){:target="_blank"}, podendo ser executado com ```make benchmark-manual ```.
+benchmark com uso de `Process.clock_gettime(Process::CLOCK_MONOTONIC)` no lugar de gema
+[Benchmark](https://github.com/ruby/benchmark){:target="_blank"}, podendo ser executado com `make benchmark-manual `.
 Note a aproximação dos resultados:
 
 ```bash
@@ -353,5 +353,5 @@ context       average       total
   good        0.0095s       4.5954s
 ```
 
-Dessa forma, podemos observar o poder de ***tsvector*** + ***GIN index***. Quando comparado com ```ilike```
+Dessa forma, podemos observar o poder de ***tsvector*** + ***GIN index***. Quando comparado com `ilike`
 o ganho de tempo foi, aproximadamente, de 90% com o método e de 62% com a requisição.
