@@ -1,8 +1,10 @@
 language: "pt-BR"
 url: "https://callmarx.dev" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 title: "CallMarx" # the name of your site, e.g. ACME Corp.
 name: "Eugenio Augusto Jimenes"
+markdown: kramdown
+highlighter: rouge
 
 plugins:
   - jekyll-postcss
@@ -21,3 +23,13 @@ defaults:
     values:
       layout: category
       permalink: /category/:basename/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - postcss.config.js
+  - tailwind.config.js
