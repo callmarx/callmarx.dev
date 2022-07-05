@@ -23,7 +23,7 @@ Por que disso? Simples, por conta dos testes e da organização. Se uma parte do
 responsável pela comunicação, ou parte dela, é esperado que, e somente que, testes de comunicação
 sejam feitos para esta parte do código.
 
-# Mas o que é MVC?
+## Mas o que é MVC?
 
 Em uma tradução livre seria a arquitetura Modelo-Visão-Controle. Trata-se de um padrão de projeto
 de software (arquitetura de software) na qual propõe a separação de conceitos em três camadas
@@ -39,7 +39,7 @@ focando na não repetição de código, mas reutilizando-o, o que facilita refat
 (*debugging*).
 
 
-# Codando e exemplificando
+## Codando e exemplificando
 
 Para entender o porquê do problema com “controllers obesos”, vamos dar um exemplo - em uma
 aplicação boba em Ruby on Rails, dado um modelo Post, temos o seguinte PostsController:
@@ -104,7 +104,7 @@ Mas isso é tema para outro momento, ~~quem sabe.~~ &#10144;
 [Busca em texto otimizada com a Gem pg_search]({% post_url 2021-01-17-busca-texto-otimizada-com-pg-search-p1 %}){:target="_blank"}
 {: .notice--info}
 
-# Sempre bom controlar o colesterol
+## Sempre bom controlar o colesterol
 
 Models obesos também são um problema. Isso pode desmotivá-lo a seguir os padrões mencionados, mas
 quando lidamos com uma lógica extensa e complexa de uma classe/arquivo, fica bem mais fácil

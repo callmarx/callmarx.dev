@@ -8,8 +8,10 @@ module.exports = {
     './*.html',
   ],
   theme: {
-    theme: {
-      extend: {},
+    extend: {
+      height: {
+      '112': '28rem',
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')]

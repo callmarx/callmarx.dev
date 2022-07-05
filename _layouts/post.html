@@ -2,27 +2,28 @@
 layout: default
 ---
 
-<!-- Post Title -->
-<div class="pt-6 md:pt-12 lg:w-10/12 mx-auto">
+<!-- Title + Date + Main Image -->
+<div class="flex flex-col pt-6 md:pt-12 lg:w-11/12 mx-auto">
     <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold md:leading-tight">
       {{ page.title }}
     </h1>
   {% if page.date %}
-    <div class="flex justify-center text-center font-medium text-gray-500 mt-2">
+    <div class="flex justify-center text-center font-medium text-gray-500 my-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
       </svg>
       <span class="ml-2">{{ page.date | date: "%d-%m-%Y" }}</span>
     </div>
   {% endif %}
-  {% if page.description %}
-    <h2 class="text-xl text-stone-600 mt-2 md:text-center">{{ page.description }}</h2>
+  {% if page.image %}
+    <img class="object-cover h-112 mb-8 lg:mx-4 xl:mx-8 2xl:mx-16" src="{{ page.image }}">
   {% endif %}
 </div>
 
 <!-- Post Content -->
-<div class="flex justify-center w-full">
-  <div class="prose prose-base prose-a:text-sky-700 prose-p:text-stone-800 md:prose-lg lg:prose-2xl"><!-- To Do: break in mobile for less than 768px -->
+<div class="flex justify-center">
+  <div class="w-full prose prose-base prose-a:text-sky-800 prose-p:text-stone-800 md:prose-lg lg:prose-2xl">
     {{ content }}
   </div>
 </div>
+
