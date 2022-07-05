@@ -12,5 +12,5 @@ estágios). Apesar de curioso e apaixonado por tecnologias, mantenho minha **rel
 “Credo! Que delícia”** com TI, na clássica batalha de gerir expectativas, foco e frustrações.
 
 
-![Eu e minha gatinha Nila](/assets/eu-e-nila.webp){: .align-center}
+![Eu e minha gatinha Nila](/assets/images/eu-e-nila.webp){: .align-center}
 Eu e a Nila, minha gatinha idosa.

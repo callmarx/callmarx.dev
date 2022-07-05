@@ -26,8 +26,8 @@ Mas confesso: tenho preconceitos com NoSQL.
 
 A proposta do banco de dados relacional é bem intuitiva, como diz na
 [wikipédia brazuca](https://pt.wikipedia.org/wiki/Banco_de_dados_relacional){:target="_blank"}:
-> “é um banco de dados que modela os dados de uma forma que eles sejam percebidos pelo usuário
-> como tabelas, ou mais formalmente relações”
+> é um banco de dados que modela os dados de uma forma que eles sejam percebidos pelo usuário
+> como tabelas, ou mais formalmente relações
 
 Na democracia das planilhas de excel gigantes, abstrair o conceito de tabelas é bem complicado.
 Quando traduzimos a lógica de negócio a uma aplicação, atender as demandas de uma empresa, por
