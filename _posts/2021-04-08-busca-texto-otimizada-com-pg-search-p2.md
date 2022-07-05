@@ -3,6 +3,7 @@ layout: post
 title:  "Busca em texto otimizada com a Gem pg_search - Parte II"
 date:   2021-04-08 19:18:53 -0300
 tags: PostgreSQL Ruby Rails Optimization Config
+image: /assets/images/greek-tablet.webp
 description: >-
   Destrinchando a funcionalidade “Full Text Searching" do PostgreSQL com a Gem pg_search
   em uma aplicação Ruby on Rails - Parte II
