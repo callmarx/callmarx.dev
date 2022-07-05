@@ -24,6 +24,10 @@ module.exports = {
           800: '#c9b596',
           900: '#c2ac8a',
         }
+      },
+      fontFamily: {
+        'marker': ['Permanent Marker', 'cursive'],
+        'codepro': ['Source Code Pro', 'monospace'],
       }
     },
   },
