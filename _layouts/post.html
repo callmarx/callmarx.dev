@@ -4,19 +4,12 @@ layout: default
 
 <!-- Title + Date + Main Image -->
 <div class="flex flex-col pt-6 md:pt-12 lg:w-11/12 mx-auto">
-    <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold md:leading-tight">
+    <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold md:mb-2">
       {{ page.title }}
     </h1>
-  {% if page.date %}
-    <div class="flex justify-center text-center font-medium text-gray-500 my-2">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-      </svg>
-      <span class="ml-2">{{ page.date | date: "%d-%m-%Y" }}</span>
-    </div>
-  {% endif %}
+  {% include date-readtime.html date=page.date content=page.content align="center" %}
   {% if page.image %}
-    <img class="object-contain h-80 md:h-112 md:mb-8 lg:mx-4 xl:mx-8 2xl:mx-16" src="{{ page.image }}">
+    <img class="object-contain h-80 md:h-112 md:mb-8 md:mt-6 lg:mx-4 xl:mx-8 2xl:mx-16" src="{{ page.image }}">
   {% endif %}
 </div>
 
