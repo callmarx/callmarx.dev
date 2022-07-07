@@ -3,16 +3,16 @@ module.exports = {
     './_drafts/**/*.html',
     './_includes/**/*.html',
     './_layouts/**/*.html',
+    './_pages/*.{md,html}',
     './_posts/*.md',
-    './*.md',
-    './*.html',
+    './*.{md,html}',
   ],
   theme: {
     extend: {
       screens: {
         'ss': '448px',
       },
-      height: {
+      spacing: {
       '112': '28rem',
       },
       colors: {

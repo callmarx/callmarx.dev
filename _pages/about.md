@@ -1,6 +1,8 @@
 ---
 layout: default
+permalink: /about/
 title: "Sobre mim"
+
 ---
 
 Nerd, disléxico, linux *fanboy*, desenvolvedor, esquerdopata convicto, viciado/*hipster*

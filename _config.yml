@@ -8,9 +8,20 @@ highlighter: rouge
 
 plugins:
   - jekyll-postcss
+  - jekyll-archives
 
 postcss:
   cache: false
+
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - tags
+  layout: archive
+  permalinks:
+    tag: '/tags/:name/'
 
 defaults:
   - scope:
@@ -18,12 +29,9 @@ defaults:
       type: posts
     values:
       layout: post
-  - scope:
-      path: "categories"
-    values:
-      layout: category
-      permalink: /category/:basename/
 
+include:
+  - _pages
 exclude:
   - Gemfile
   - Gemfile.lock

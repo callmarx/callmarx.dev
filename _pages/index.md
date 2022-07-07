@@ -1,8 +1,8 @@
 ---
-layout: index
 title: "CallMarx.dev"
+permalink: /
+layout: index
 description: Nerd, disléxico, viciado-hipster em café, desenvolvedor, linux fanboy e esquerdopata convicto - CallMarx, sacou?
-date: 2022-06-29 21:34:03 -0300
 
 ---
 

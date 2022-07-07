@@ -1,0 +1,33 @@
+---
+title: "Posts filtrados por Tag"
+permalink: /tags/
+layout: default
+
+---
+{% comment %}
+* Sorting tags by the amount of post in each of them
+{% endcomment %}
+
+{% assign tags_list = '' %}
+{% for tag in site.tags %}
+    {% assign tags_list = tags_list | append: tag[1].size | append: ',' | append: tag[0] | append: ';' %} 
+{% endfor %}
+{% assign tags_list = tags_list | split: ';' %}
+{% assign tags_list = tags_list | sort %}
+{% assign sorted_tags = '' %}
+{% for tag in tags_list reversed %}
+    {% assign name = tag | split: ',' %}
+    {% assign sorted_tags = sorted_tags | append: name[1] | append: ';' %} 
+{% endfor %}
+{% assign sorted_tags = sorted_tags | split: ';' %}
+
+<div class="flex flex-col pt-6 md:pt-12 lg:w-11/12 mx-auto">
+  <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
+    {{ page.title }}
+  </h1>
+  <div class="grid justify-items-stretch gap-4 grid-cols-1 ss:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {% for tag in sorted_tags %}
+      <a class="justify-self-start py-1 px-3 text-2xl font-codepro rounded shadow-lg bg-stone-300 text-stone-800 hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</div>
