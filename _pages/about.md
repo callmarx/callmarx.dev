@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /about/
 title: "Sobre mim"
+layout: post
+permalink: /about/
 
 ---
 
@@ -12,7 +12,6 @@ sanduíche de mortadela do mercadão.
 Bacharel em Ciências da Computação pela USP, trabalho na área desde 2012 (época dos meus primeiros
 estágios). Apesar de curioso e apaixonado por tecnologias, mantenho minha **relação dúbia de
 “Credo! Que delícia”** com TI, na clássica batalha de gerir expectativas, foco e frustrações.
-
 
 ![Eu e minha gatinha Nila](/assets/images/eu-e-nila.webp){: .align-center}
 Eu e a Nila, minha gatinha idosa.
