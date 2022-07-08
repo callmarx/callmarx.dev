@@ -17,7 +17,7 @@ funcionalidades do Elixir em um "apanhadão". Neste post abordo sobre estruturas
 funções e operador *Pipe*, além de rever um pouco mais sobre *pattern matching*.
 <!-- excerpt-end -->
 
-# Estruturas de Controle
+## Estruturas de Controle
 
 **Obs**: Me senti bem idiota depois de escrever esta parte. No final das contas ficou bem próximo
 ao tutorial oficial, disponível em <https://elixir-lang.org/getting-started/case-cond-and-if.html>{:target="_blank"}
@@ -372,7 +372,7 @@ Temos um ```with``` com dois casos distintos de negativa tratados pelo bloco ```
 - Com ```Map.fetch```, que retorna ```:error```
 - Com ```is_even/1```, do módulo ```Integer``` importado, que retorna ```false```.
 
-# Funções
+## Funções
 
 Síntese sobre função anonima, função nomeada e *pattern matching* em funções.
 
@@ -602,7 +602,7 @@ Olá, Eugenio Augusto Jimenes
 %{age: "16", favorite_hobby: "sleep", first: "Eugenio Augusto", last: "Jimenes"}
 ```
 
-# Operador *Pipe*
+## Operador *Pipe*
 
 Representado por ```|>```, ele passa o resultado da expressão à sua esquerda para "o que vier" à
 sua direita.

@@ -18,7 +18,7 @@ vejo isso sendo enfatizado. Inicialmente acreditei que fosse apenas por conta de
 código, mas provou-se bem mais do que isto, justificando a vasta cobertura que diversos autores dão.
 <!-- excerpt-end -->
 
-# "Pattern Matching"
+## "Pattern Matching"
 Essa parte provavelmente vai parecer confusa e desnecessária, mas confie, *pattern matching* é uma
 característica poderosa do Elixir. Inicialmente precisamos entender que ```=``` é um operador
 *match*, em uma tradução livre de *match* seria "correspondência". Sim, também o utilizamos para
@@ -118,7 +118,7 @@ iex> tl([])
 Note que a expressão ```[head | tail] = []``` retorna um erro pois uma lista vazia, ```[]```, não
 possui "calda". Da mesma forma, obtemos erro ao chamar a função ```tl/1``` sob o mesmo valor.
 
-# Funções e o "pattern matching"
+## Funções e o "pattern matching"
 Por traz dos panos, as funções fazem *pattern match* nos seus argumentos.
 
 ```elixir
@@ -201,7 +201,7 @@ Resumindo, as funções fazem *pattern match* com os dados de entrada sob os seu
 maneira independente. Podemos usar isso para atribuir valores à variáveis separadas para dentro da
 função.
 
-# Não confunda com argumentos padrões
+## Não confunda com argumentos padrões
 Tome cuidado é com a similaridade da escrita. No Ruby utilizamos ```=``` no argumento para definir
 um valor padrão, tornado sua entrada opcional. Já no Elixir, como vimos, ```=``` vai além da
 associação, para definir um argumento com um valor padrão, como no Ruby, utiliza-se ```\\```.
