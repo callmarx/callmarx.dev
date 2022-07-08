@@ -5,6 +5,7 @@ title: "CallMarx.dev" # the name of your site, e.g. ACME Corp.
 name: "Eugenio Augusto Jimenes"
 markdown: kramdown
 highlighter: rouge
+excerpt_separator: <!-- excerpt-end -->
 
 plugins:
   - jekyll-postcss

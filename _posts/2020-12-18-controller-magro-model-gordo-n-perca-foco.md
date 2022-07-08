@@ -10,6 +10,7 @@ description: >-
 categories: blog
 header:
   og_image: assets/posts/fat-cat-draw.webp
+
 ---
 
 Jamis Buck escreveu em 2006 o famoso post
@@ -18,7 +19,7 @@ tornando-se quase que um mantra para seguir o padrão MVC -
 ***M****odel-****V****iew-****C****ontroller*. No caso, toda lógica não relacionada à resposta ao
 usuário/cliente (View-Controller) deve entrar no model, mantendo assim a comunicação simples, ou
 melhor dizendo, “magra”.
-<!-- excerpt-separator -->
+<!-- excerpt-end -->
 
 Por que disso? Simples, por conta dos testes e da organização. Se uma parte do seu código é
 responsável pela comunicação, ou parte dela, é esperado que, e somente que, testes de comunicação

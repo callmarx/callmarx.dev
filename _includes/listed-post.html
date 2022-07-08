@@ -2,7 +2,7 @@
   {% if include.image %}
     <div class="mb-2 md:mr-4 md:mb-0 md:w-4/12 ">
       <a class="bg-gray-100" href="{{ include.url }}">
-        <img class="object-contain pb-8 xl:pb-0 md:h-80 rounded 2xl:mb-3 hover:opacity-70 transition duration-300 ease-in-out" alt="{{ include.title }}" src="{{ include.image }}"/></a>
+        <img class="object-contain mx-auto mt-4 mb-2 md:mb-4 xl:my-auto md:h-80 rounded 2xl:mb-3 hover:opacity-40 transition duration-200 ease-in-out" alt="{{ include.title }}" src="{{ include.image }}"/></a>
     </div>
   {% endif %}
   <div class="flex-1">
@@ -10,7 +10,7 @@
       <h2 class="">{{ include.title }}</h2>
     </a>
    {% include date-readtime.html date=include.date content=include.content align=include.align %}
-    <p class="text-xl text-stone-700 mb-4">{{ include.excerpt }}</p>
+    <div class="prose prose-base prose-a:text-sky-800 prose-p:text-stone-800 md:prose-p:text-lg lg:prose-p:text-xl md:prose-lg lg:prose-2xl mb-4">{{ include.excerpt }}</div>
     {% if include.tags %}
       <div class="mb-2">
         {% for tag in include.tags %}

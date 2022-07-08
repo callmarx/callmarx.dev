@@ -10,6 +10,7 @@ description: >-
 categories: blog
 header:
   og_image: assets/posts/text-search.webp
+
 ---
 
 Naufragando pela internet me deparei com a [Gem PgSearch](https://github.com/Casecommons/pg_search){:target="_blank"}
@@ -19,7 +20,7 @@ O conceito [Full Text Searching](https://en.wikipedia.org/wiki/Full-text_search)
 refere a técnicas e estrateǵias computacionais para otimizar a pesquisa de palavras, e até frases,
 em longos e múltiplos textos armazenados em bancos de dados. Trata-se de uma ampla área de estudo
 e pesquisa dentro da Ciências da Computação, desde de 1990.
-<!-- excerpt-separator -->
+<!-- excerpt-end -->
 
 Mas confesso: tenho preconceitos com NoSQL.
 

@@ -10,6 +10,7 @@ description: >-
 categories: blog
 header:
   og_image: assets/posts/text-search.webp
+
 ---
 
 Na [parte I]({% post_url 2021-01-17-busca-texto-otimizada-com-pg-search-p1 %}){:target="_blank"}
@@ -17,7 +18,7 @@ deste post eu expliquei um pouco sobre o conceito e as funcionalidades de
 [Full Text Searching do PostgreSQL](https://www.postgresql.org/docs/current/textsearch-intro.html){:target="_blank"}
 e me comprometi a explicar com um projetinho Ruby on Rails através da Gema
 [PgSearch](https://github.com/Casecommons/pg_search){:target="_blank"}, vamos lá então.
-<!-- excerpt-separator -->
+<!-- excerpt-end -->
 
 <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 74.023%;"><iframe src="https://giphy.com/embed/VbnUQpnihPSIgIXuZv" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>
 <br/>
