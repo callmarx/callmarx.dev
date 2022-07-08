@@ -3,7 +3,7 @@
     <div class="flex mb-2">
       {% for network in site.data.social-networks %}
         <a class="py-2 mr-2" href="{{ network.link }}">
-          <img width="24" height="24" src="{{ network.logo }}" alt="{{ network.name }}" />
+          <img class="h-8 w-8" src="{{ network.logo }}" alt="{{ network.name }}" />
         </a>
       {% endfor %}
     </div>

@@ -1,13 +1,13 @@
 ---
 title: "CallMarx.dev"
-permalink: /
 layout: index
+permalink: /
+image: /assets/images/eu.webp
 description: Nerd, disléxico, viciado-hipster em café, desenvolvedor, linux fanboy e esquerdopata convicto - CallMarx, sacou?
 
 ---
 
-## You're ready to go!
+## Eugenio A. Jimenes
 
-Start developing your Jekyll website.
-
-**Note:** Date and description are here only to test header.html
+Nerd, disléxico, viciado-hipster em café, desenvolvedor, linux fanboy e esquerdopata convicto -
+CallMarx, sacou?
