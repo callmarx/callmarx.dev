@@ -6,10 +6,12 @@ name: "Eugenio Augusto Jimenes"
 markdown: kramdown
 highlighter: rouge
 excerpt_separator: <!-- excerpt-end -->
+word_count: 160
 
 plugins:
   - jekyll-postcss
   - jekyll-archives
+  - jekyll-paginate
 
 postcss:
   cache: false
@@ -23,6 +25,9 @@ jekyll-archives:
   layout: archive
   permalinks:
     tag: '/tags/:name/'
+
+paginate: 5
+paginate_path: "/page:num/"
 
 defaults:
   - scope:

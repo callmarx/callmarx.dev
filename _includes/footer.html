@@ -2,8 +2,8 @@
   <div class="container mx-auto">
     <div class="flex mb-2">
       {% for network in site.data.social-networks %}
-        <a class="py-2 mr-2" href="{{ network.link }}">
-          <img class="h-8 w-8" src="{{ network.logo }}" alt="{{ network.name }}" />
+        <a class="py-2 mr-2" href="{{ network.link }}" rel="noopener noreferrer nofollow" target="_blank">
+          <img class="h-8 w-8 hover:opacity-40 transition duration-200 ease-in-out" src="{{ network.logo }}" alt="{{ network.name }}" />
         </a>
       {% endfor %}
     </div>

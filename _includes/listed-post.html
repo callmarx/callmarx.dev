@@ -12,7 +12,7 @@
       </div>
     {% endif %}
     <div class="flex-1">
-      <a href="{{ post.url }}" class="text-2xl text-stone-800 font-bold mb-1 hover:text-stone-600">
+      <a href="{{ post.url }}" class="text-2xl text-stone-800 font-bold mb-1 hover:opacity-40 transition duration-200 ease-in-out">
         <h2 class="">{{ post.title }}</h2>
       </a>
      {% include date-readtime.html date=post.date content=post.content align=include.align %}
