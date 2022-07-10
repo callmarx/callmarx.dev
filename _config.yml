@@ -1,6 +1,6 @@
 language: "pt-BR"
 url: "https://callmarx.dev" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 title: "CallMarx.dev" # the name of your site, e.g. ACME Corp.
 name: "Eugenio Augusto Jimenes"
 markdown: kramdown
@@ -10,27 +10,33 @@ word_count: 160
 
 plugins:
   - jekyll-postcss
-  - jekyll-archives
   - jekyll-paginate-v2
 
 postcss:
   cache: false
 
-tag_archive:
-  type: jekyll-archives
-  path: /tags/
-jekyll-archives:
-  enabled:
-    - tags
-  layout: archive
-  permalinks:
-    tag: '/tags/:name/'
 
 pagination:
   enabled: true
   per_page: 5
   permalink: "/page/:num/"
 
+autopages:
+  enabled: true
+  categories:
+    enabled: false
+  collections:
+    enabled: false
+  tags:
+    layouts:
+      - 'autopages_tags.html'
+    title: ':tag' # :tag is replaced by the tag name
+    permalink: '/tags/:tag'
+    silent: false
+    slugify:
+      mode: 'default'   # :tag is slugified.
+      case: false
+    enabled: true
 
 defaults:
   - scope:
