@@ -11,7 +11,7 @@ word_count: 160
 plugins:
   - jekyll-postcss
   - jekyll-archives
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 postcss:
   cache: false
@@ -26,8 +26,11 @@ jekyll-archives:
   permalinks:
     tag: '/tags/:name/'
 
-paginate: 5
-paginate_path: "/page:num/"
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: "/page/:num/"
+
 
 defaults:
   - scope:

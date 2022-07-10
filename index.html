@@ -1,5 +1,13 @@
 ---
 layout: default
+title: "CallMarx.dev"
+image: /assets/images/eu.webp
+description: >-
+  Desenvolvedor, nerd, disléxico, linux fanboy, viciado/hipster em café e
+  esquerdopata convicto - CallMarx, sacou?
+pagination:
+  enabled: true
+
 ---
 
 <div class="flex flex-col pt-6 md:pt-12 lg:w-11/12 mx-auto">
@@ -15,8 +23,9 @@ layout: default
       </div>
     </div>
     <div class="md:w-3/4 prose prose-base prose-a:text-sky-800 prose-p:font-codepro prose-p:text-stone-800 prose-h2:font-codepro md:prose-lg lg:prose-2xl">
-      {{ content }}
+      {% capture home_content %}{% include home-content.md %}{% endcapture %}
+      {{ home_content | markdownify }}
     </div>
   </div>
-   {% include listed-post.html posts=site.posts align="start" %}
+   {% include listed-post.html posts=paginator.posts align="start" %}
 </div>
