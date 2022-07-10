@@ -1,25 +1,24 @@
 <turbo-frame id="listing-posts" class="flex flex-col">
-  <div class="self-center w-11/12 flex">
-    <div class="mt-4 grow border-dashed border-t-2 border-stone-300"></div>
-    <h2 class="mx-2 font-semibold text-lg md:text-xl lg:text-2xl text-stone-500">Últimas publicações</h2>
-    <div class="mt-4 grow border-dashed border-t-2 border-stone-300"></div>
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">
-          Previous
+  <div class="self-center w-full lg:w-11/12 flex flex-row-reverse sm:flex-row">
+    <h2 class="invisible sm:visible mx-2 font-semibold text-lg md:text-xl lg:text-2xl text-stone-500">Últimas publicações</h2>
+    <div class="invisible sm:visible mt-4 grow border-dashed border-t-2 border-stone-300"></div>
+    {% if paginator.total_pages > 1 %}
+      <div class="inline-flex items-center -space-x-px">
+        <a class="py-2 px-3 leading-none text-stone-500 bg-white rounded-l-lg border border-gray-300 {% unless paginator.previous_page %}pointer-events-none opacity-80{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endunless %}" href="{{ paginator.previous_page_path }}">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
         </a>
-      {% else %}
-        <span class="previous">Previous</span>
-      {% endif %}
-      <span class="page_number ">
-        Page: {{ paginator.page }} of {{ paginator.total_pages }}
-      </span>
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-      {% else %}
-        <span class="next ">Next</span>
-      {% endif %}
-    </div>
+        {% if paginator.page_trail %}
+          {% for trail in paginator.page_trail %}
+      <a class="py-2 px-3 leading-none font-semibold text-stone-500 bg-white border border-gray-300 {% if page.pagination_info.curr_page == trail.num %}pointer-events-none opacity-40{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endif %}" href="{{ trail.path }}">
+              {{ trail.num }}
+            </a>
+          {% endfor %}
+        {% endif %}
+        <a class="py-2 px-3 leading-none text-stone-500 bg-white rounded-r-lg border border-gray-300 {% unless paginator.next_page %}pointer-events-none opacity-80{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endunless %}" href="{{ paginator.next_page_path }}">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        </a>
+      </div>
+    {% endif %}
   </div>
   {% for post in include.posts %}
     <div class="self-center flex flex-col md:flex-row w-full lg:w-11/12 rounded-lg shadow-lg md:my-4 px-6">

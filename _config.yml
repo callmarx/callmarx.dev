@@ -21,6 +21,9 @@ pagination:
   per_page: 4
   sort_reverse: true #for descending order by date
   permalink: "/page/:num/"
+  trail:
+    before: 2
+    after: 2
 
 autopages:
   enabled: true
