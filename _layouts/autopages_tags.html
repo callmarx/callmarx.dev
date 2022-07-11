@@ -20,63 +20,21 @@ layout: default
 {% assign sorted_tags = sorted_tags | split: ';' %}
 
 <div class="flex flex-col pt-6 md:pt-12 lg:w-11/12 mx-auto">
-<turbo-frame id="listing-tags" class="flex flex-col">
-  <div class="flex flex-col mx-auto">
-    <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
-      {{ page.title }}
-    </h1>
-    <div class="grid justify-items-stretch gap-4 md:gap-8 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-      {% for tag in sorted_tags %}
-        <a class="justify-self-start py-1 px-3 text-2xl font-codepro rounded shadow-lg bg-stone-300 text-stone-800 hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out" href="/tags/{{ tag | slugify }}" data-turbo-frame="listing-tags">{{ tag }}</a>
-      {% endfor %}
-    </div>
-  </div>
-  <turbo-frame id="listing-posts" class="flex flex-col">
-  <div class="self-center w-full lg:w-11/12 flex flex-row-reverse sm:flex-row">
-    <h2 class="invisible sm:visible mx-2 font-semibold text-lg md:text-xl lg:text-2xl text-stone-500">Últimas publicações</h2>
-    <div class="invisible sm:visible mt-4 grow border-dashed border-t-2 border-stone-300"></div>
-    {% if paginator.total_pages > 1 %}
-      <div class="inline-flex items-center -space-x-px">
-        <a class="py-2 px-2 leading-none text-stone-600 bg-white rounded-l-lg border border-gray-300 {% unless paginator.previous_page %}pointer-events-none opacity-40{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endunless %}" href="{{ paginator.previous_page_path }}" data-turbo-frame="listing-posts">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-        </a>
-        {% if paginator.page_trail %}
-          {% for trail in paginator.page_trail %}
-            <a class="py-2 px-3 leading-none font-semibold text-stone-600 bg-white border border-gray-300 {% if page.pagination_info.curr_page == trail.num %}pointer-events-none opacity-40{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endif %}" href="{{ trail.path }}" data-turbo-frame="listing-posts">
-              {{ trail.num }}
-            </a>
-          {% endfor %}
-        {% endif %}
-        <a class="py-2 px-2 leading-none text-stone-600 bg-white rounded-r-lg border border-gray-300 {% unless paginator.next_page %}pointer-events-none opacity-40{% else %}hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out{% endunless %}" href="{{ paginator.next_page_path }}" data-turbo-frame="listing-posts">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        </a>
-      </div>
-    {% endif %}
-  </div>
-  {% for post in paginator.posts %}
-    <div class="self-center flex flex-col md:flex-row w-full lg:w-11/12 rounded-lg shadow-lg md:my-4 px-6 hover:shadow-2xl transition duration-200 ease-in-out">
-      {% if post.image %}
-        <div class="mb-2 md:mr-4 md:mb-0 md:w-4/12 ">
-          <a class="bg-gray-100" href="{{ post.url }}" data-turbo="false">
-            <img class="object-contain mx-auto mt-4 mb-2 md:mb-4 xl:my-auto md:h-80 rounded 2xl:mb-3 hover:opacity-40 transition duration-200 ease-in-out" alt="{{ post.title }}" src="{{ post.image }}"/></a>
-        </div>
-      {% endif %}
-      <div class="flex-1">
-        <a href="{{ post.url }}" data-turbo="false" class="text-2xl text-stone-800 font-bold mb-1 hover:opacity-40 transition duration-200 ease-in-out">
-          <h2 class="">{{ post.title }}</h2>
-        </a>
-       {% include date-readtime.html date=post.date content=post.content align="start" %}
-        <div class="prose prose-base prose-a:pointer-events-none prose-p:text-stone-800 md:prose-p:text-lg lg:prose-p:text-xl md:prose-lg lg:prose-2xl mb-4">{{ post.excerpt }}</div>
-        {% if post.tags %}
-          <div class="mb-2">
-            {% for tag in post.tags %}
-              <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs md:text-sm lg:text-base font-codepro rounded bg-stone-300 text-stone-800 hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out" href="/tags/{{ tag | slugify }}" data-turbo="false">{{ tag }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
+  <turbo-frame id="listing-tags">
+    <div class="flex flex-col mb-8">
+      <h1 class="text-center text-stone-800 text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
+        {% if page.autopage.display_name %}Posts sob a tag '{{ page.title }}'{% else %}{{ page.title }}{% endif %}
+      </h1>
+      <div class="grid justify-items-stretch gap-2 md:gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        {% for tag in sorted_tags %}
+          {% if page.autopage.display_name == tag %}
+            <a class="justify-self-start py-1 px-3 text-lg sm:text-xl font-codepro rounded shadow-lg bg-sky-200 text-sky-800 opacity-40 hover:opacity-80 hover:bg-stone-200 hover:text-stone-800 transition duration-300 ease-in-out" href="/tags/" data-turbo-frame="listing-tags">{{ tag }}</a>
+          {% else %}
+            <a class="justify-self-start py-1 px-3 text-lg sm:text-xl font-codepro rounded shadow-lg bg-stone-300 text-stone-800 hover:bg-sky-200 hover:text-sky-800 transition duration-300 ease-in-out"  href="/tags/{{ tag | slugify }}" data-turbo-frame="listing-tags">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
-  {% endfor %}
+     {% include listed-post.html posts=paginator.posts align="start" %}
   </turbo-frame>
-</turbo-frame>
 </div>
