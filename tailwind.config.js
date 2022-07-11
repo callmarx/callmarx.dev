@@ -5,8 +5,8 @@ module.exports = {
     './_drafts/**/*.html',
     './_includes/**/*.html',
     './_layouts/**/*.html',
-    './_pages/*.{md,html}',
-    './_posts/*.md',
+    './_pages/**/.{md,html}',
+    './_posts/**/.md',
     './*.{md,html}',
   ],
   theme: {
