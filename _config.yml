@@ -8,7 +8,7 @@ language: "pt-BR"
 baseurl: ""
 twitter:
   username: leminski_se
-  card: summary
+  card: summary_large_image
 
 markdown: kramdown
 highlighter: rouge
