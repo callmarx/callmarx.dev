@@ -2,12 +2,13 @@
 layout: post
 title:  "Diário disléxico - Elixir: Aquele clássico apanhadão"
 date:   2021-05-23 18:11:49 -0300
+locale: pt_BR
+lang-ref: learning-elixir-summary
 tags: Elixir
 image: /assets/images/elixir-logo.webp
 image_alt: "Elixir Logo"
 description: >-
   Uma "rápida" síntese de mais alguns conceitos antes de ir para resolução de exercícios.
-categories: blog
 
 ---
 
@@ -518,7 +519,7 @@ end
 {: .notice--relative--primary}
 
 Dado último post,
-[Preciso falar sobre "Pattern Matching"]({% post_url 2021-05-14-diario-dislexico-elixir-pattern-matching %}){:target="_blank"},
+[Preciso falar sobre "Pattern Matching"]({% post_url pt-br/2021-05-14-diario-dislexico-elixir-pattern-matching %}){:target="_blank"},
 vamos complicar um pouco somando *pattern matching* e recursão.
 
 

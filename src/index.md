@@ -1,3 +1,17 @@
+---
+layout: index
+title: "CallMarx.dev"
+locale: pt_BR
+main_image: /assets/images/eu.webp
+image: /assets/images/eu.webp
+description: >-
+  Desenvolvedor, nerd, disléxico, linux fanboy, viciado/hipster em café e
+  esquerdopata convicto - CallMarx, sacou?
+pagination:
+  enabled: true
+  locale: pt_BR
+
+---
 
 ## Eugenio A. Jimenes
 
