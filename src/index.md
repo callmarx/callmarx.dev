@@ -1,6 +1,7 @@
 ---
 layout: index
 title: "CallMarx.dev"
+locale: pt_BR
 main_image: /assets/images/eu.webp
 image: /assets/images/eu.webp
 description: >-
@@ -8,6 +9,7 @@ description: >-
   esquerdopata convicto - CallMarx, sacou?
 pagination:
   enabled: true
+  locale: pt_BR
 
 ---
 

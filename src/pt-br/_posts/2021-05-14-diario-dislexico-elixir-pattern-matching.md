@@ -2,13 +2,14 @@
 layout: post
 title:  "Diário disléxico - Elixir: preciso falar sobre \"Pattern Matching\""
 date:   2021-05-14 19:27:21 -0300
+locale: pt_BR
+lang-ref: learning-elixir-pattern-matching
 tags: Elixir
 image: /assets/images/elixir-logo.webp
 image_alt: "Elixir Logo"
 description: >-
   Essa parte provavelmente vai parecer confusa e desnecessária, mas confie, "pattern matching" é
   uma característica poderosa do Elixir.
-categories: blog
 
 ---
 

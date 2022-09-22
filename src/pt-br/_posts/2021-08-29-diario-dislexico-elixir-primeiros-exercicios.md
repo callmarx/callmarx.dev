@@ -2,12 +2,13 @@
 layout: post
 title:  "Diário disléxico - Elixir: Os primeiros exercícios"
 date:   2021-08-29 21:49:12 -0300
+locale: pt_BR
+lang-ref: learning-elixir-first-exercises
 tags: Elixir
 image: /assets/images/elixir-logo.webp
 image_alt: "Elixir Logo"
 description: >-
   Sobre os primeiros exercícios de Elixir do exercism.io
-categories: blog
 
 ---
 
